@@ -15,6 +15,7 @@ namespace WebFullStack.Controllers
             return View();
         }
 
+
         [HttpPost]
         [ActionName("id1")]
         public ActionResult Index1()
