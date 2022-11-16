@@ -1,0 +1,8 @@
+C:\Users\Admin\source\repos\AspNetBackEndFullStack\AspNetBackEndFullStack\bin\Debug\AspNetBackEndFullStack.exe.config
+C:\Users\Admin\source\repos\AspNetBackEndFullStack\AspNetBackEndFullStack\bin\Debug\AspNetBackEndFullStack.exe
+C:\Users\Admin\source\repos\AspNetBackEndFullStack\AspNetBackEndFullStack\bin\Debug\AspNetBackEndFullStack.pdb
+C:\Users\Admin\source\repos\AspNetBackEndFullStack\AspNetBackEndFullStack\obj\Debug\AspNetBackEndFullStack.csproj.AssemblyReference.cache
+C:\Users\Admin\source\repos\AspNetBackEndFullStack\AspNetBackEndFullStack\obj\Debug\AspNetBackEndFullStack.csproj.SuggestedBindingRedirects.cache
+C:\Users\Admin\source\repos\AspNetBackEndFullStack\AspNetBackEndFullStack\obj\Debug\AspNetBackEndFullStack.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\AspNetBackEndFullStack\AspNetBackEndFullStack\obj\Debug\AspNetBackEndFullStack.exe
+C:\Users\Admin\source\repos\AspNetBackEndFullStack\AspNetBackEndFullStack\obj\Debug\AspNetBackEndFullStack.pdb
