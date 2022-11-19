@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace AspNetBackEndFullStack
 {
-    public class Product : IProduct
+    public interface IAttendance
     {
-        public string GetName()
-        {
-            throw new NotImplementedException();
-        }
+        string checkAttendance(int ischeck);
     }
 }

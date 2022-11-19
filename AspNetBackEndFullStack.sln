@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DbHelper", "DbHelper\DbHelp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebFullStack", "WebFullStack\WebFullStack.csproj", "{11539F74-8310-49CB-82B7-9C16072B9B12}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DB.DataAccess", "DB.DataAccess\DB.DataAccess.csproj", "{393ABE3A-FC3E-4FB9-91B0-777D4C4B14B5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{11539F74-8310-49CB-82B7-9C16072B9B12}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{11539F74-8310-49CB-82B7-9C16072B9B12}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{11539F74-8310-49CB-82B7-9C16072B9B12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{393ABE3A-FC3E-4FB9-91B0-777D4C4B14B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{393ABE3A-FC3E-4FB9-91B0-777D4C4B14B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{393ABE3A-FC3E-4FB9-91B0-777D4C4B14B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{393ABE3A-FC3E-4FB9-91B0-777D4C4B14B5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

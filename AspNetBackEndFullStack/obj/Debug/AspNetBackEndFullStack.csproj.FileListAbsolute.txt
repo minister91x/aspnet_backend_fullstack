@@ -6,3 +6,6 @@ C:\Users\Admin\source\repos\AspNetBackEndFullStack\AspNetBackEndFullStack\obj\De
 C:\Users\Admin\source\repos\AspNetBackEndFullStack\AspNetBackEndFullStack\obj\Debug\AspNetBackEndFullStack.csproj.CoreCompileInputs.cache
 C:\Users\Admin\source\repos\AspNetBackEndFullStack\AspNetBackEndFullStack\obj\Debug\AspNetBackEndFullStack.exe
 C:\Users\Admin\source\repos\AspNetBackEndFullStack\AspNetBackEndFullStack\obj\Debug\AspNetBackEndFullStack.pdb
+C:\Users\Admin\source\repos\AspNetBackEndFullStack\AspNetBackEndFullStack\bin\Debug\DB.DataAccess.dll
+C:\Users\Admin\source\repos\AspNetBackEndFullStack\AspNetBackEndFullStack\bin\Debug\DB.DataAccess.pdb
+C:\Users\Admin\source\repos\AspNetBackEndFullStack\AspNetBackEndFullStack\obj\Debug\AspNetBackEndFullStack.csproj.CopyComplete

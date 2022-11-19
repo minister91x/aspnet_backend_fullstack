@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace AspNetBackEndFullStack
 {
-    public class Product : IProduct
+    public abstract class Employee
     {
-        public string GetName()
-        {
-            throw new NotImplementedException();
-        }
+        public abstract void Working();
     }
 }

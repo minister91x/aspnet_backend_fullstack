@@ -1,0 +1,6 @@
+C:\Users\Admin\source\repos\AspNetBackEndFullStack\DB.DataAccess\bin\Debug\DB.DataAccess.dll
+C:\Users\Admin\source\repos\AspNetBackEndFullStack\DB.DataAccess\bin\Debug\DB.DataAccess.pdb
+C:\Users\Admin\source\repos\AspNetBackEndFullStack\DB.DataAccess\obj\Debug\DB.DataAccess.csproj.AssemblyReference.cache
+C:\Users\Admin\source\repos\AspNetBackEndFullStack\DB.DataAccess\obj\Debug\DB.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\AspNetBackEndFullStack\DB.DataAccess\obj\Debug\DB.DataAccess.dll
+C:\Users\Admin\source\repos\AspNetBackEndFullStack\DB.DataAccess\obj\Debug\DB.DataAccess.pdb

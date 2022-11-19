@@ -18,7 +18,9 @@ namespace AspNetBackEndFullStack
             return "bò bò";
         }
 
-        public override string Eat2()
+       
+
+        public override string Eat1()
         {
             throw new NotImplementedException();
         }

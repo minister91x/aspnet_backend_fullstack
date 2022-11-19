@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace AspNetBackEndFullStack
 {
-    public class Product : IProduct
+    public class Cleaner : Employee
     {
-        public string GetName()
+        public override void Working()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Cleaner Working");
         }
     }
 }

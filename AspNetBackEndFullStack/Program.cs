@@ -152,53 +152,76 @@ namespace AspNetBackEndFullStack
 
             //int[,] myvar = new int[3, 4];
 
-            var date = DateTime.Now;
-            Console.WriteLine(date.ToString("dd/MM/yyyy HH:mm:ss"));
-            var date_add = DateTime.Now.AddDays(2);
-            Console.WriteLine(date_add.ToString("dd/MM/yyyy HH:mm:ss"));
+            //var date = DateTime.Now;
+            //Console.WriteLine(date.ToString("dd/MM/yyyy HH:mm:ss"));
+            //var date_add = DateTime.Now.AddDays(2);
+            //Console.WriteLine(date_add.ToString("dd/MM/yyyy HH:mm:ss"));
 
 
-            TimeSpan aInterval = new System.TimeSpan(0, 1, 1, 0);
-            // Thêm một khoảng thời gian.
+            //TimeSpan aInterval = new System.TimeSpan(0, 1, 1, 0);
+            //// Thêm một khoảng thời gian.
 
-            DateTime newTime = date.Add(aInterval);
-            Console.WriteLine("After add 1 hour, 1 minute: " + newTime);
+            //DateTime newTime = date.Add(aInterval);
+            //Console.WriteLine("After add 1 hour, 1 minute: " + newTime);
 
-            var createDateString = "23/11/2022 15:00:00";
-            var dateParseExact = DateTime.ParseExact(createDateString, "dd/MM/yyyy HH:mm:ss", CultureInfo.InvariantCulture);
-            Console.WriteLine(dateParseExact.ToString("dd/MM/yyyy HH:mm:ss"));
-
-
-
-            var string_value = "Khóa học aspnet Thầy Quân";
-            Console.WriteLine("ToUpper: " + string_value.ToUpper());
+            //var createDateString = "23/11/2022 15:00:00";
+            //var dateParseExact = DateTime.ParseExact(createDateString, "dd/MM/yyyy HH:mm:ss", CultureInfo.InvariantCulture);
+            //Console.WriteLine(dateParseExact.ToString("dd/MM/yyyy HH:mm:ss"));
 
 
-            GenericClass<int> intGenericClass = new GenericClass<int>(86);
-            intGenericClass.genericProperty = 2017;
-            int intVal = intGenericClass.genericMethod(2019);
 
-            GenericClass<string> strGenericClass = new GenericClass<string>("Welcome to");
-            strGenericClass.genericProperty = "WEB THAY QUÂN";
-            string strVal = strGenericClass.genericMethod("lop_aspnet thay Quan");
+            //var string_value = "Khóa học aspnet Thầy Quân";
+            //Console.WriteLine("ToUpper: " + string_value.ToUpper());
 
-            ArrayList arrList = new ArrayList() { 1, "5", 2.5, true };
-            arrList.Add("Web Thay Quan");
-            foreach (var item in arrList)
-            {
-                Console.WriteLine("ITEM: " + item);
-            }
 
-            var bird = new Bird();
-            Console.WriteLine("bird: " + bird.Eat());
+            //GenericClass<int> intGenericClass = new GenericClass<int>(86);
+            //intGenericClass.genericProperty = 2017;
+            //int intVal = intGenericClass.genericMethod(2019);
 
-            var cow = new Cow();
-            Console.WriteLine("cow: " + cow.Eat());
-            cow.Name = "Bò tót";
-           
+            //GenericClass<string> strGenericClass = new GenericClass<string>("Welcome to");
+            //strGenericClass.genericProperty = "WEB THAY QUÂN";
+            //string strVal = strGenericClass.genericMethod("lop_aspnet thay Quan");
+
+            //ArrayList arrList = new ArrayList() { 1, "5", 2.5, true };
+            //arrList.Add("Web Thay Quan");
+            //foreach (var item in arrList)
+            //{
+            //    Console.WriteLine("ITEM: " + item);
+            //}
+
+            //var bird = new Bird();
+            //Console.WriteLine("bird: " + bird.Eat());
+
+            //var cow = new Cow();
+            //Console.WriteLine("cow: " + cow.Eat());
+            //cow.Name = "Bò tót";
+
             var ps = new Person();
             ///ps.Name = "";
             //var animal = new Animal();
+            //var dev = new Deverloper();
+            //dev.Working();
+            //Console.WriteLine(dev.checkAttendance(1));
+
+
+            //var tester = new Tester();
+            //tester.Working();
+            //Console.WriteLine(tester.checkAttendance(0));
+
+            //var cleaner = new Cleaner();
+            //cleaner.Working();
+
+            var list = DB.DataAccess.SqlDbHelper.GetStudents();
+            if (list != null && list.Count > 0)
+            {
+                foreach (var item in list)
+                {
+                    Console.WriteLine(item.id + "\t");
+                    Console.WriteLine(item.StudentName + "\t");
+                    Console.WriteLine(item.StudentCode);
+                }
+
+            }
 
             Console.ReadLine();
         }
