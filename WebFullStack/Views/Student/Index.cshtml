@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var courseName = "Khóa học aspnet MCV fullstack thầy Quân";
+
+    if (courseName != null)
+    {
+        courseName = "KHÓA HỌC ASPNET MVC FULLSTACK -BÀI SỐ 5 : Views";
+    }
+}
+@model List<WebFullStack.Models.StudentInfor>
+<h2>@courseName</h2>
+<table>
+    <thead>id</thead>
+    <thead>Name</thead>
+    <tbody>
+        @if (Model != null && Model.Count > 0)
+        {
+            foreach (var item in Model)
+            {
+                <tr style="border:1px solid black">
+                    <td>@item.Id</td>
+                    <td>@item.Name</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+@*@Html.Action("PartialViewDemo","Student")*@
+<div id="div_partialviews"></div>
+<script>
+    $(document).ready(function () {
+        loadPartialViews();
+    });
+
+    function loadPartialViews() {
+        $.ajax({
+            type: "GET",
+            /* contentType: "application/json",*/
+            url: "/Student/PartialViewDemo",
+            data: {},
+            dataType: 'html',
+            cache: false,
+            success: function (data) {
+                $("#div_partialviews").html(data);
+            },
+            error: function (e) {
+
+                console.log("ERROR : ", e);
+
+            }
+        });
+
+    }
+</script>
+
+
+
