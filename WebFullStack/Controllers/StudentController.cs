@@ -43,9 +43,13 @@ namespace WebFullStack.Controllers
             return View();
         }
 
-        [NonAction]
-        public ActionResult Index1(string id)
+        [HttpPost]
+        public ActionResult StudentInsertUpdate(ProductEditModels models)
         {
+            if (!ModelState.IsValid)
+            {
+
+            }
             return Json(null, JsonRequestBehavior.AllowGet);
         }
     }

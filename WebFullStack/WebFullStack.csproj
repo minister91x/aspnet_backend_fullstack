@@ -126,6 +126,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="LogAttribute.cs" />
+    <Compile Include="Models\ProductEditModels.cs" />
+    <Compile Include="Models\ProductViewsModels.cs" />
     <Compile Include="Models\StudentInfor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
