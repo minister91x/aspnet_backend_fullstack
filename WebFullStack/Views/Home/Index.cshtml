@@ -14,46 +14,114 @@
         list.Add(new WebFullStack.Models.StudentInfor { Id = (i + 1), Name = "Name " + i });
     }
 }
+
 <div class="jumbotron">
     <h1>KHÓA HỌC ASP.NET BACKEND FULLSTACK THẦY QUÂN</h1>
-    <h1>Razor View Engine ngày : @datetimeNow</h1>
-    <h1>@DateTime.Now.Year @isleapyear</h1>
+    @*<h1>Razor View Engine ngày : @datetimeNow</h1>
+        <h1>@DateTime.Now.Year @isleapyear</h1>*@
 </div>
 
-@Html.ActionLink("bấm vào tôi", "Index", new { id = DateTime.Now.Year })
+@*@Html.ActionLink("bấm vào tôi", "Index", new { id = DateTime.Now.Year })
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-        </tr>
-    </thead>
-    <tbody>
-        @if (list != null && list.Count > 0)
-        {
-            foreach (var item in list)
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (list != null && list.Count > 0)
             {
-                <tr>
-                    <td>@item.Id</td>
-                    <td>@item.Name</td>
-                </tr>
+                foreach (var item in list)
+                {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.Name</td>
+                    </tr>
+                }
+
             }
 
+        </tbody>
+    </table>*@
+<div id="StudentPartial"></div>
+<form>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    </div>
+    <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="button" onclick="InsertUpdate()" class="btn btn-primary">Submit</button>
+</form>
+<script>
+    $(document).ready(function () {
+        loadPartial();
+    });
+
+    function loadPartial() {
+        var token = $("input[name=__RequestVerificationToken]").val();
+        if (token == null) {
+            alert("token không được trống");
+            return;
         }
 
-    </tbody>
-</table>
-@Html.ValidationSummary(false, "Hãy điền đầy đủ các thông tin bên dưới", new { @class = "danger" })
-@using (Html.BeginForm())
-{
-    <div class="form-group">
-        <input type="hidden" id="txtStudetId" value="@Model.Id" />
-        @*@Html.TextBoxFor(m => m.Name)
-            @Html.ValidationMessageFor(m => m.Name, "Tên không được trống ", new { @class = "text-danger" })*@
-        <input type="text" id="txtUserName" placeholder="nhập tên" class="form-control" value="@Model.Name" />
-        @*<input type="text" id="txtEmail" placeholder="nhập tên" class="form-control" />*@
-        <button type="submit" class="btn btn-primary" id="btnSend">Cập nhật </button>
+        $.ajax({
+            type: 'POST',
+            url: "/Student/PartialViewDemo",
+            data: {
+                __RequestVerificationToken: token
+            },
+            success: function (data) {
+                $("#StudentPartial").html(data);
 
-    </div>
-}
+            },
+            error: function (data) {
+                console.log("error:" + JSON.stringify(data));
+            }
+        });
+    }
+
+    function InsertUpdate() {
+
+        debugger;
+        var password = $("#exampleInputPassword1").val();
+       
+
+        var inputdata = {
+            abc: password
+        };
+
+        //Utils.Loading();
+        $.ajax({
+            type: 'POST',
+            url: "/Student/GetDataForm",
+            data: inputdata,
+            success: function (data) {
+                // Utils.UnLoading();
+                var responseCode = data.responseCode;
+                var Description = data.Description;
+                if (responseCode > 0) {
+                    // ProductCtrl.showPopup(Description, 1);
+                    alert(Description)
+                } else {
+
+                    //ProductCtrl.showPopup(Description, 0);
+                    alert(Description);
+                }
+
+            },
+            error: function (data) {
+                console.log("error:" + JSON.stringify(data));
+            }
+        });
+    }
+</script>

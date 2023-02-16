@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using RestSharp;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -16,17 +18,52 @@ namespace WebAPI_Demo.Controllers
             return new string[] { "value1", "value2" };
         }
 
-        public List<ProductViewsModels> GetListProduct()
+        public List<StudentViewsModel> GetListProduct()
         {
-            var list = new List<ProductViewsModels>();
+            var list = new List<StudentViewsModel>();
 
-            for (int i = 0; i < 10; i++)
+            var list_std = DB.DataAccess.SqlDbHelper.GetStudents();
+            if (list_std != null && list_std.Count > 0)
             {
-                list.Add(new ProductViewsModels { ProductId=i,ProductName="Sản phẩm "+ i, SupplierName="Web Thầy Quân"});
+                foreach (var item in list_std)
+                {
+                    list.Add(new StudentViewsModel
+                    {
+                        id = item.id
+                        ,
+                        StudentName = item.StudentName
+                        ,
+                        StudentAddress = item.StudentAddress
+                        ,
+                        StudentCode = item.StudentCode
+                    });
+                }
             }
             return list;
         }
 
+
+        public ApiResponseModels GetListUser(int userId)
+        {
+            var model = new ApiResponseModels();
+            var url = "https://reqres.in/api/users?page="+ userId;
+            var client = new RestClient(url);
+            var request = new RestRequest();
+            request.Method = Method.Get;
+            request.AddHeader("postman-token", "4600c295-6f26-bddb-de64-17bbe717838d");
+            request.AddHeader("cache-control", "no-cache");
+            var response = client.Execute(request);
+            if (response == null || string.IsNullOrEmpty(response.Content))
+            {
+                model.support.text = "data not found";
+                return model;
+            }
+
+            model = JsonConvert.DeserializeObject<ApiResponseModels>(response.Content);
+
+            return model;
+            
+        }
         // GET api/values/5
         public string Get(int id)
         {
