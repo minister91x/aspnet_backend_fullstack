@@ -13,12 +13,14 @@ namespace DB.DataAccess
         {
             SqlConnection conn = null;
             var connectionString = "Server=DESKTOP-IFRSV3F;Database=DemoDatabase;User Id=sa;Password=123456;";
+            // khởi tạo object 
             conn= new SqlConnection(connectionString);
             if (conn.State == System.Data.ConnectionState.Closed)
             {
                 conn.Open();
             }
 
+            var class1 = new Class1("1234");
             return conn;
         }
     }
