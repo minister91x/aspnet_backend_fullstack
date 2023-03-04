@@ -77,3 +77,5 @@ C:\Users\Admin\source\repos\AspNetBackEndFullStack\WebFullStack\obj\Debug\WebFul
 C:\Users\Admin\source\repos\AspNetBackEndFullStack\WebFullStack\obj\Debug\WebFullStack.csproj.CopyComplete
 C:\Users\Admin\source\repos\AspNetBackEndFullStack\WebFullStack\obj\Debug\WebFullStack.dll
 C:\Users\Admin\source\repos\AspNetBackEndFullStack\WebFullStack\obj\Debug\WebFullStack.pdb
+C:\Users\Admin\source\repos\AspNetBackEndFullStack\WebFullStack\bin\DB.DataAccess.dll
+C:\Users\Admin\source\repos\AspNetBackEndFullStack\WebFullStack\bin\DB.DataAccess.pdb

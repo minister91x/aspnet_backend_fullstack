@@ -75,6 +75,10 @@
                     <form id="quickForm" novalidate="novalidate">
                         <div class="card-body">
                             <div class="form-group">
+                                <label for="exampleInputEmail1">Chọn lớp</label>
+                                <select id="ddlStudentClass" class="form-control" style="width:50%"></select>
+                            </div>
+                            <div class="form-group">
                                 <label for="exampleInputEmail1">Email address</label>
                                 <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
                             </div>
@@ -109,7 +113,13 @@
 </section>
 <script>
     $(document).ready(function () {
+        LoadClassStudent();
         loadPartial();
+
+        $("#ddlStudentClass").change(function () {
+            var value = $("#ddlStudentClass").val();
+            var checkBoxData = $("#exampleCheck1").is(":checked");
+        });
     });
 
     function loadPartial() {
@@ -128,6 +138,32 @@
             success: function (data) {
                 $("#StudentPartial").html(data);
 
+            },
+            error: function (data) {
+                console.log("error:" + JSON.stringify(data));
+            }
+        });
+    }
+
+    function GetDataClassStudent() {
+        var value = $("#ddlStudentClass").val();
+        alert(value);
+    }
+
+    function LoadClassStudent() {
+        $.ajax({
+            type: 'GET',
+            url: "/Student/StudentClassGetAll",
+            data: {},
+
+            success: function (data) {
+                var html = "";
+                if (data != null) {
+                    $.each(data,function (index, element) {
+                        html += "<option value=\"" + element.ClassId + "\">" + element.ClassName + "</option>";
+                    });
+                    $("#ddlStudentClass").append(html);
+                }
             },
             error: function (data) {
                 console.log("error:" + JSON.stringify(data));

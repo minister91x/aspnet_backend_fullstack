@@ -96,5 +96,19 @@ namespace WebFullStack.Controllers
                 return false;
             }
         }
+
+        public JsonResult StudentClassGetAll()
+        {
+            try
+            {
+                var lst = DB.DataAccess.SqlDbHelper.ClassStudentGetAll();
+                return Json(lst, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+        }
     }
 }

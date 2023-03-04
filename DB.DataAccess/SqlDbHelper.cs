@@ -46,5 +46,37 @@ namespace DB.DataAccess
 
             return list;
         }
+
+        public static List<ClassStudent> ClassStudentGetAll()
+        {
+            var lst = new List<ClassStudent>();
+            try
+            {
+                // Bước 1: gọi connectionString
+                var connnectstr = ConnectSQLServerDB.GetSqlConnection();
+                //Bước 2: dùng SQLCOMMAND để gọi storeprocedure 
+                var cmd = new SqlCommand("SP_StudentClassGetAll", connnectstr);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                //bước 3: dùng SQLReader để đọc dữ liệu từ database trả về
+                var reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    lst.Add(new ClassStudent
+                    {
+                        ClassId = reader["ClassId"] != null ? Convert.ToInt32(reader["ClassId"].ToString()):0
+                        ,
+                        ClassName = reader["ClassName"] != null ? reader["ClassName"].ToString():""
+                    });
+                }
+
+                return lst;
+
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+        }
     }
 }
