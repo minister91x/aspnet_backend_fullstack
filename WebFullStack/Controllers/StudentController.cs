@@ -17,10 +17,10 @@ namespace WebFullStack.Controllers
             var model = new List<StudentInfor>();
             try
             {
-                for (int i = 0; i < 10; i++)
-                {
-                    model.Add(new StudentInfor { Id = i, Name = "Web ASPNET MVC thầy Quân bài " + i });
-                }
+                //for (int i = 0; i < 10; i++)
+                //{
+                //    model.Add(new StudentInfor { Id = i, Name = "Web ASPNET MVC thầy Quân bài " + i });
+                //}
             }
             catch (Exception ex)
             {
@@ -36,6 +36,8 @@ namespace WebFullStack.Controllers
         {
             return PartialView();
         }
+
+      
 
 
         [HttpPost]

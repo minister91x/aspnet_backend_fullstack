@@ -1,0 +1,29 @@
+﻿@model List<WebFullStack.Models.StudentInfor>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>StudentCode</th>
+            <th>StudentAddress</th>
+            <td>StudentClassID</td>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Count > 0)
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.id</td>
+                    <td>@item.StudentName</td>
+                    <td>@item.StudentCode</td>
+                    <td>@item.StudentAddress</td>
+                    <td>@item.StudentClassID</td>
+                </tr>
+            }
+
+        }
+
+    </tbody>
+</table>

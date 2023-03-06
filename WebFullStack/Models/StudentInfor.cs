@@ -7,8 +7,14 @@ namespace WebFullStack.Models
 {
     public class StudentInfor
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
+        public int id { get; set; }
+        public string StudentName { get; set; }
+        public string StudentAddress { get; set; }
+        public string StudentCode { get; set; }
+
+        public int StudentClassID { get; set; }
+
+        public string StudentClassName { get; set; }
     }
 
     public class ReturnData

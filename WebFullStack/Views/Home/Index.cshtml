@@ -8,11 +8,11 @@
         isleapyear = "this is leapYear";
     }
 
-    var list = new List<WebFullStack.Models.StudentInfor>();
-    for (int i = 0; i < 5; i++)
-    {
-        list.Add(new WebFullStack.Models.StudentInfor { Id = (i + 1), Name = "Name " + i });
-    }
+    //var list = new List<WebFullStack.Models.StudentInfor>();
+    //for (int i = 0; i < 5; i++)
+    //{
+    //    list.Add(new WebFullStack.Models.StudentInfor { Id = (i + 1), Name = "Name " + i });
+    //}
 }
 
 <!--<div class="jumbotron">
@@ -98,6 +98,10 @@
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </div>
                     </form>
+
+
+
+                <div id="lstStudent"></div>
                 </div>
                 <!-- /.card -->
             </div>
@@ -114,11 +118,11 @@
 <script>
     $(document).ready(function () {
         LoadClassStudent();
-        loadPartial();
+        LoadStudentByClassID(0);
 
         $("#ddlStudentClass").change(function () {
-            var value = $("#ddlStudentClass").val();
-            var checkBoxData = $("#exampleCheck1").is(":checked");
+            var classID = $("#ddlStudentClass").val();
+            LoadStudentByClassID(classID);
         });
     });
 
@@ -130,13 +134,28 @@
         }
 
         $.ajax({
-            type: 'POST',
+            type: 'GET',
             url: "/Student/PartialViewDemo",
             data: {
                 __RequestVerificationToken: token
             },
             success: function (data) {
                 $("#StudentPartial").html(data);
+
+            },
+            error: function (data) {
+                console.log("error:" + JSON.stringify(data));
+            }
+        });
+    }
+
+    function LoadStudentByClassID(id) {
+        $.ajax({
+            type: 'GET',
+            url: "/Home/ListStudentPartial",
+            data: {ClassId:id},
+            success: function (data) {
+                $("#lstStudent").html(data);
 
             },
             error: function (data) {
@@ -157,7 +176,7 @@
             data: {},
 
             success: function (data) {
-                var html = "";
+                var html = "<option value=\"0\">Chọn lớp</option>";
                 if (data != null) {
                     $.each(data,function (index, element) {
                         html += "<option value=\"" + element.ClassId + "\">" + element.ClassName + "</option>";

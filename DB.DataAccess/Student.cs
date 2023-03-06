@@ -12,5 +12,7 @@ namespace DB.DataAccess
         public string StudentName { get; set; }
         public string StudentAddress { get; set; }
         public string StudentCode { get; set; }
+
+        public int StudentClassID { get; set; }
     }
 }

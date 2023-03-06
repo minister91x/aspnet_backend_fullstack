@@ -130,6 +130,7 @@
     <Compile Include="LogAttribute.cs" />
     <Compile Include="Models\ProductEditModels.cs" />
     <Compile Include="Models\ProductViewsModels.cs" />
+    <Compile Include="Models\StudentDataModels.cs" />
     <Compile Include="Models\StudentInfor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -2230,6 +2231,7 @@
     <Content Include="Views\Common\HeaderPartial.cshtml" />
     <Content Include="Views\Common\LeftMenuPartial.cshtml" />
     <Content Include="Views\Common\FooterPartial.cshtml" />
+    <Content Include="Views\Home\ListStudentPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

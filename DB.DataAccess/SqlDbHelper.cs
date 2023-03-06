@@ -78,5 +78,49 @@ namespace DB.DataAccess
                 throw;
             }
         }
+
+        public static List<Student> GetStudentByClassId(int ClassID)
+        {
+            var lst = new List<Student>();
+            try
+            {
+                // Bước 1: gọi connectionString
+                var connnectstr = ConnectSQLServerDB.GetSqlConnection();
+                //Bước 2: dùng SQLCOMMAND để gọi storeprocedure 
+                var cmd = new SqlCommand("SP_Student_GetByClassID", connnectstr);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+               
+                
+                cmd.Parameters.Add(new SqlParameter("@_ClassID", ClassID));
+
+
+                //bước 3: dùng SQLReader để đọc dữ liệu từ database trả về
+                var reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    lst.Add(new Student
+                    {
+                        id = reader["id"] != null ? Convert.ToInt32(reader["id"].ToString()) : 0
+                        ,
+                        StudentName = reader["StudentName"] != null ? reader["StudentName"].ToString() : ""
+                         ,
+                        StudentCode = reader["StudentCode"] != null ? reader["StudentCode"].ToString() : ""
+                         ,
+                        StudentAddress = reader["StudentAddress"] != null ? reader["StudentAddress"].ToString() : ""
+                        ,
+                        StudentClassID = reader["StudentClassID"] != null ? Convert.ToInt32(reader["StudentClassID"].ToString()) : 0
+                    });
+                }
+
+                return lst;
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+        }
+
+
     }
 }
